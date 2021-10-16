@@ -1,0 +1,16 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" # 웹을 통한 exposure 노출 허용 여부. 운영환경에는 필요한 엔드포인트만 나가도록 주의한다.
+        #exclude: "shutdown" # include, exclude 모두 *를 사용할 수 있다. exclude 설정이 include 보다 우선한다.
+    enabled-by-default: true # 해당 옵션을 통해 전체 엔드포인트 디폴트를 on, off로 설정할 수 있다.
+  endpoint:
+#    shutdown: # {endpoint ID}
+#      enabled: true # 엔드포인트를 활성화 한다. 이것이 false이면 빈이 올라가지 않는다.
+    beans:
+      cache:
+        time-to-live: 10ms
+#  server:
+#    port: 8081
+#    address: "127.0.0.1"
